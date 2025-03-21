@@ -1,0 +1,440 @@
+:root {
+    /* Soothing color palette */
+    --primary-color: #2a4365;    /* Deep blue */
+    --secondary-color: #4299e1;  /* Sky blue */
+    --accent-color: #38b2ac;     /* Teal */
+    --background-color: #f7fafc; /* Cool white */
+    --text-color: #2d3748;      /* Slate gray */
+    --card-bg: #ffffff;         /* Pure white */
+    --heading-color: #1a365d;   /* Dark blue */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    background: var(--background-color);
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar improvements */
+header {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    padding: 1.25rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.5px;
+}
+
+/* Remove bullet points and adjust nav styling */
+nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;  /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 0.25rem;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Adjust main content for fixed header */
+main {
+    padding-top: 80px;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.75rem;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    nav ul li a {
+        font-size: 1.1rem;
+    }
+}
+
+/* Hero section with gradient background */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+    min-height: 100vh;
+    max-width: 100%;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.button {
+    background: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+.button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56, 178, 172, 0.2);
+}
+
+/* Projects section */
+.projects {
+    background: var(--background-color);
+    padding: 4rem 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--heading-color);
+}
+
+.project-card p {
+    color: var(--text-color);
+}
+
+/* Skills section redesign */
+.skills {
+    background: linear-gradient(135deg, var(--background-color), #f0f7ff);
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.skills-list {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.skills-list ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.skills-list ul li {
+    flex: 0 1 300px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(66, 153, 225, 0.1);
+    border-radius: 16px;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    min-height: 200px;
+}
+
+.skills-list ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.skills-list ul li:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-color: var(--secondary-color);
+}
+
+.skills-list ul li:hover::before {
+    opacity: 1;
+}
+
+.skills-list ul li h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--heading-color);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.skills-list ul li h4 svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--accent-color);
+    stroke-width: 1.5;
+    transition: var(--transition);
+}
+
+.skills-list ul li:hover h4 svg {
+    transform: scale(1.1);
+    stroke: var(--secondary-color);
+}
+
+.skills-list ul li p {
+    color: var(--text-color);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skills-list ul li p span {
+    background: var(--background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.skills-list ul li:hover p span {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Contact form styling */
+.contact {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: var(--transition);
+    background: #f8fafc;
+    font-size: 1.1rem;
+}
+
+.form-group input {
+    height: 3rem;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2);
+}
+
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Section alignment and spacing */
+section {
+    padding: 5rem 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--heading-color);
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+/* Resume section */
+.resume {
+    text-align: center;
+    padding: 5rem 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section {
+        padding: 4rem 0;
+    }
+
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+
+    .project-grid,
+    .skills-list {
+        padding: 0 1.5rem;
+    }
+
+    .contact {
+        margin: 0 1.5rem;
+        padding: 2rem;
+    }
+
+    .form-group input {
+        height: 2.5rem;
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+    }
+}
+
+/* Container width standardization */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}

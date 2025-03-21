@@ -208,6 +208,17 @@ main {
     color: var(--text-color);
 }
 
+.project-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.project-card a:hover {
+    color: var(--secondary-color);
+}
+
 /* Skills section redesign */
 .skills {
     background: linear-gradient(135deg, var(--background-color), #f0f7ff);

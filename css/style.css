@@ -43,7 +43,7 @@ nav {
 .logo {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #ffffff;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: -0.5px;
 }
@@ -63,7 +63,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--text-primary);
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 700;
@@ -79,12 +79,13 @@ nav ul li a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent-color);
+    background: #ffffff;
     transition: width 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: var(--accent-color);
+    color: #ffffff;
+    opacity: 0.9;
 }
 
 nav ul li a:hover::after {
